@@ -64,11 +64,12 @@ with tf.Session() as sess:
         tf.argmax(hypothesis, 1), feed_dict={X: mnist.test.images[r:r + 1]}))
 
     # don't know why this makes Travis Build error.
-    # plt.imshow(
-    #     mnist.test.images[r:r + 1].reshape(28, 28),
-    #     cmap='Greys',
-    #     interpolation='nearest')
-    # plt.show()
+    import matplotlib.pyplot as plt
+    plt.imshow(
+        mnist.test.images[r:r + 1].reshape(28, 28),
+        cmap='Greys',
+        interpolation='nearest')
+    plt.show()
 
 
 '''
